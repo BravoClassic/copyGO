@@ -10,6 +10,7 @@ JavaScript modules. The CommonJS require() function is how you import
 JavaScript modules defined in other files.
 */
 const createViewModel = require("./main-view-model").createViewModel;
+let img;
 
 function onNavigatingTo(args) {
     /*
@@ -30,6 +31,8 @@ function onNavigatingTo(args) {
     https://docs.nativescript.org/core-concepts/data-binding.
     */
     page.bindingContext = createViewModel();
+    img = page.getViewById("image");
+    img.src = "https://place-hold.it/300x300/#333/#fff";
 }
 
 /*
